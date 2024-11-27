@@ -9,6 +9,7 @@
 	--primary: hsl(258, 80%, 55%);
 	--primary-lighter: hsl(258, 80%, 93%);
 	--primary-darker: hsl(258, 80%, 40%);
+	--error: hsl(0, 70%, 55%);
 }
 
 * {
@@ -27,7 +28,7 @@ body {
 }
 
 main {
-	margin-top: 4rem;
+	padding: 4rem 0.5rem;
 	max-width: 48rem;
 	width: 100%;
 	display: flex;
@@ -58,7 +59,7 @@ input[type='submit']:hover {
 	cursor: pointer;
 }
 
-.add-form {
+form {
 	background-color: #fff;
 	border: 1px solid var(--background-darker);
 	display: flex;
@@ -67,16 +68,16 @@ input[type='submit']:hover {
 	padding: 0.25rem;
 }
 
-.add-form input[type='text'] {
+form input[type='text'] {
 	flex: 1;
 	padding-left: 0.75rem;
 }
 
-.add-form input[type='text']:focus {
+form input[type='text']:focus {
 	outline: none;
 }
 
-.add-form:has(input[type='text']:focus) {
+form:has(input[type='text']:focus) {
 	border-color: #000;
 	outline: 1px solid #000;
 }
@@ -85,6 +86,7 @@ input[type='submit']:hover {
 	display: flex;
 	flex-direction: column;
 	gap: 1rem;
+	overflow: auto;
 }
 
 .todo {
@@ -122,8 +124,21 @@ input[type='submit']:hover {
 	padding: 0;
 }
 
-.todo span.material-icons-round {
+.todo button span.material-icons-round {
 	color: var(--bread);
+}
+
+.todo button:hover span.material-icons-round {
+	color: var(--primary);
+	cursor: pointer;
+}
+
+.todo button.delete:hover span.material-icons-round {
+	color: var(--error);
+}
+
+.todo button:disabled span.material-icons-round {
+	color: var(--background-darker);
 }
 
 .todo-details {

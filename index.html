@@ -18,35 +18,37 @@
 		<main>
 			<h1>Todo list</h1>
 			<form class="add-form">
-				<input type="text" placeholder="Task to be done" />
+				<input id="add-form-input" type="text" placeholder="Task to be done" />
 				<input type="submit" value="New todo" />
 			</form>
 
 			<div class="todos">
-				<div class="todo">
-					<div class="todo-movement">
-						<button>
-							<span class="material-icons-round">keyboard_arrow_up</span>
-						</button>
-						<button>
-							<span class="material-icons-round">keyboard_arrow_down</span>
-						</button>
-					</div>
+				<template id="todo-template">
+					<div class="todo">
+						<div class="todo-movement">
+							<button class="up">
+								<span class="material-icons-round">keyboard_arrow_up</span>
+							</button>
+							<button class="down">
+								<span class="material-icons-round">keyboard_arrow_down</span>
+							</button>
+						</div>
 
-					<div class="todo-details">
-						<h4>todo_text</h4>
-						<p>todo_timestamp</p>
-					</div>
+						<div class="todo-details">
+							<h4>todo_text</h4>
+							<p>todo_timestamp</p>
+						</div>
 
-					<div class="todo-actions">
-						<button>
-							<span class="material-icons-round"> edit </span>
-						</button>
-						<button>
-							<span class="material-icons-round">delete</span>
-						</button>
+						<div class="todo-actions">
+							<button class="edit">
+								<span class="material-icons-round">edit</span>
+							</button>
+							<button class="delete">
+								<span class="material-icons-round">delete</span>
+							</button>
+						</div>
 					</div>
-				</div>
+				</template>
 			</div>
 		</main>
 
